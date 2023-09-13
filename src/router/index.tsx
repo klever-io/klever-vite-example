@@ -1,5 +1,6 @@
 import { PrivateLayout } from "@/components/private-layout";
 import Home from "@/pages/home";
+import { Receive } from "@/pages/private/receive";
 import { Send } from "@/pages/private/send";
 import { Root } from "@/pages/root";
 import { createBrowserRouter } from "react-router-dom";
@@ -23,7 +24,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/private/receive",
-        element: <h1>Receive</h1>,
+        element: (
+          <PrivateLayout>
+            <Receive />
+          </PrivateLayout>
+        ),
       },
     ],
   },
