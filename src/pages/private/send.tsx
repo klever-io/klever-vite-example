@@ -16,7 +16,7 @@ const sendFormSchema = z.object({
 
 type SendFormValues = z.infer<typeof sendFormSchema>;
 
-export function Private() {
+export function Send() {
   const navigate = useNavigate();
 
   const { address } = useAuth();
@@ -78,6 +78,7 @@ export function Private() {
         ),
       });
     } catch (error) {
+      console.log("error", error);
       toast({
         variant: "destructive",
         title: String(error),
